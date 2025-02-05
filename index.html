@@ -3,73 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motosport Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            background-color: #222;
-            color: white;
-            padding: 20px;
-            font-size: 24px;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #444;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-        }
-        nav a:hover {
-            background: #666;
-        }
-        .content {
-            display: none;
-            padding: 20px;
-        }
-        .active {
-            display: block;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+    <title>Portfolio - Motorsport</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
-    <header>Motosport Portfolio</header>
-    <nav>
-        <a href="#" onclick="showContent('section1')">O meni</a>
-        <a href="#" onclick="showContent('section2')">Projekti</a>
-        <a href="#" onclick="showContent('section3')">Galerija</a>
-    </nav>
-    <div id="section1" class="content active">
+    <header>
+        <h1 class="fade-in">Moj Motorsport Portfolio</h1>
+    </header>
+    
+    <section class="intro">
+        <p class="slide-in">Motorsport je spoj inovacije, inženjerstva i strasti za brzinom. Kroz godine, postao je ne samo sport već i platforma za tehnološke napretke koji oblikuju industriju automobila. Svaki tim, svaki vozač i svaki dizajner igra ključnu ulogu u stvaranju savršene simbioze između čovjeka i stroja.</p>
+    </section>
+    
+    <section class="about fade-in">
         <h2>O meni</h2>
-        <p>Hi! My name is Rafaela and I am a spohmore in college studying Graphic Arts and Technology. One of my biggest passions is motosport and hoping to work in the industry one day. I am a part of a Croatian Racing Team where I am Head of Design and lead a team of designers an work on many projects.</p>
-    </div>
-    <div id="section2" class="content">
-        <h2>Projekti</h2>
-        <p>Jedan od najvećih projekata je dizajn liverija novog auta. FSB-RT08 prozvan Martes je auto na kojem sam radila i dizajnira izgled vanjeske karoserije bolida. </p>
-    </div>
-    <div id="section3" class="content">
-        <h2>Galerija</h2>
-        <p>Ovdje možeš dodati slike povezane s tvojim radom.</p>
-        <img src="slika1.png" alt="Opis slike">
-    </div>
+        <p>Ja sam Rafaela, studentica druge godine Grafičkog fakulteta u Zagrebu. Kreativna sam i aktivna osoba koja uvijek traži nove izazove. Strastvena sam prema dizajnu, estetici i stvaranju vizualno upečatljivih priča.</p>
+    </section>
+    
+    <section class="work fade-in">
+        <h2>Moj rad</h2>
+        <p>Vodim dizajn u FSB Racing timu, gdje sam odgovorna za vizualni identitet tima. Dizajniram liverije bolida, promotivne materijale i osiguravam da svaki element vizualne komunikacije odražava profesionalnost i strast tima. Svaki detalj u dizajnu ima svoju svrhu – od boja do rasporeda elemenata, sve mora biti skladno i funkcionalno.</p>
+    </section>
+    
+    <section class="projects">
+        <div class="project fade-in">
+            <img src="slika1.png" alt="Projekt 1">
+            <div class="text">
+                <h2>Projekt 1</h2>
+                <p>Opis projekta 1...</p>
+            </div>
+        </div>
+        <div class="project fade-in">
+            <img src="slika2.png" alt="Projekt 2">
+            <div class="text">
+                <h2>Projekt 2</h2>
+                <p>Opis projekta 2...</p>
+            </div>
+        </div>
+    </section>
+    
     <script>
-        function showContent(id) {
-            let sections = document.querySelectorAll('.content');
-            sections.forEach(section => section.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-        }
+        gsap.from(".fade-in", { opacity: 0, duration: 1, y: 50, stagger: 0.3 });
+        gsap.from(".slide-in", { opacity: 0, x: -100, duration: 1.5 });
     </script>
 </body>
 </html>
